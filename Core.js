@@ -60,7 +60,7 @@ bot.on("message", async message => {
 		let msgAr = message.content.split(" ");
 		let msgc = message.content.slice(prefix.length);
 		let i = msgAr[0];
-		let args = msgAr[2];
+		let args = msgAr.slice(2);
 	
 	if (!message.content.startsWith('워터야 ')) { return; } 
   console.log(`${message.author.username.toString()} (${message.author.id.toString()})> ${message.content.toString()}`);
