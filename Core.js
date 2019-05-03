@@ -89,7 +89,7 @@ bot.on("message", async message => {
 	if (!message.content.startsWith('워터야 ')) { return; } 
         console.log(`${message.author.username.toString()} (${message.author.id.toString()})> ${message.content.toString()}`);
 	
-               let cmd = msgAr[1]
+               let cmd = msgAr[0]
 	       
   	let commandfile = bot.commands.get(cmd.slice(prefix.length));
         let pree = '워터야'
