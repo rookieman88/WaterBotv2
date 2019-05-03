@@ -5,7 +5,7 @@ const superagent = require('superagent');
 const fs = require('fs');
 bot.commands = new Discord.Collection();
 const DF = require('./ai/dialogflow.js')
-const df = new DF('df2water', './saves/df2water-a97ea32b09f9.json')
+const df = new DF('df2water', './/df2water-a97ea32b09f9.json')
 let TheToken = process.env.BotToken
 bot.login(TheToken);
 
