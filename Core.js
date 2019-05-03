@@ -92,7 +92,11 @@ bot.on("message", async message => {
                let cmd = msgAr[1]
 	       
   	let commandfile = bot.commands.get(cmd.slice(prefix.length));
-
+        let pree = '워터야'
+	if (pree === message.content) {
+		message.channel.send('?')
+	} else {
+	
         if(commandfile) {
 		commandfile.run(bot,message,args);
 	} else {
@@ -107,6 +111,7 @@ bot.on("message", async message => {
          })
 		
 	   }
+	}
 	
 
 
