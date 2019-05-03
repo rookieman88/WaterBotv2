@@ -2,6 +2,33 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const superagent = require('superagent');
+const fs = require('fs');
+bot.commands = new Discord.Collection();
+const DF = require('./dialogflow.js')
+const df = new Bot('df2water', './saves/df2water-a97ea32b09f9.json')
+let TheToken = process.env.BotToken
+bot.login(TheToken);
+
+fs.readdir("./commands/", (err, files) => {
+
+  if(err) console.log(err);
+
+  let jsfile = files.filter(f => f.split(".").pop() === "js")
+  if(jsfile.length <= 0){
+    console.log("음 인식이 안됨;;");
+    return;
+  }
+
+  jsfile.forEach((f, i) =>{
+    let props = require(`./commands/${f}`);
+    let filenames = f.split(".");
+    let filename = filenames[0];
+    console.log(`${f} 로딩됨!`);
+	bot.commands.set(props.help.name, props);
+  });
+
+});
+
 
 bot.on('guildMemberAdd', member => {
 superagent.get("https://api.myjson.com/bins/z6qiw").then((res) => {
@@ -13,20 +40,18 @@ if(!welcomechannel[member.guild.id]){
 	let cha = welcomechannel[member.guild.id].welcomechannel
 	if (cha === 0) { return }
 	
-let Ch = member.guild.channels.find('id', cha)
-    let memberavatar = member.user.avatarURL
-	
+        let Ch = member.guild.channels.find('id', cha)
+
         let welcomembed = new Discord.RichEmbed()
         .setColor("#2E9AFE")
         .addField(":bust_in_silhouette: 누가 새로 왔네요 ", `${member.user.tag} ( ${member} ) 이분`)
 	.setFooter(`ID : ${member.id}`)
-		.setTimestamp()
-		
-		
-        Ch.send(welcomembed);
-		return;
+	.setTimestamp()	
+          Ch.send(welcomembed);
+	return;
 });
 });
+
 
 bot.on('guildMemberRemove', member => {
 superagent.get("https://api.myjson.com/bins/z6qiw").then((res) => {
@@ -35,116 +60,53 @@ if(!welcomechannel[member.guild.id]){
 	return
 }
 	let cha = welcomechannel[member.guild.id].welcomechannel
-		if (cha === 0) { return }
+	if (cha === 0) { return }
 	
 	
-let Ch = member.guild.channels.find('id', cha)
+        let Ch = member.guild.channels.find('id', cha)
 	
         let byembed = new Discord.RichEmbed()
         .setColor("#2E9AFE")
         .addField(":hand_splayed:  ㅂㅇㅂㅇ ", `${member.user.tag} ( ${member} ) `)
 	.setFooter(`ID : ${member.id}`)
-		.setTimestamp()
-		
-		
-        Ch.send(byembed);
-		return;
+	.setTimestamp()		
+          Ch.send(byembed); 
+	return;
 });
 });
+
 
 
 bot.on("message", async message => {
 	
 
-    let prefix = '워터야 '
+                let prefix = '워터야 '
 		let msgAr = message.content.split(" ");
 		let msgc = message.content.slice(prefix.length);
 		let i = msgAr[0];
 		let args = msgAr.slice(2);
 	
 	if (!message.content.startsWith('워터야 ')) { return; } 
-  console.log(`${message.author.username.toString()} (${message.author.id.toString()})> ${message.content.toString()}`);
-  
-  
-if (message.content.startsWith('워터야 공지')) {
-  
-	 let owners = process.env.owners
- 
-
- 
- if (owners.includes(message.author.id)) {
-	 
-	 if(args[0] === '에브리원') {
-
-	 superagent.get("https://api.myjson.com/bins/sztu0").then((res) => {
-let welcomechannel = res.body;
-
-bot.guilds.forEach(g => {
-	 let reason = message.content.replace(`워터야 공지 에브리원 `, "")
-	 
-	   if(!welcomechannel[g.id]){
-return
-}
-	let msguild = welcomechannel[g.id].welcomechannel	
-	if (msguild === 0) { return }
-
-	 
-	let cha = msguild
-	let ann = new Discord.RichEmbed()
-	.addField(`워터봇 공지`, `${reason}`)
-	.setColor(`#00ffc1`)
-	.setFooter(`${message.member.user.tag} 가 발신한 공지입니다.`)
-let Ch = bot.channels.get(cha)
-	Ch.sendEmbed(ann)
-	Ch.send("[ @everyone ]")
-
-})
-	 	 let reason = message.content.replace(`워터야 공지 `, "")
-	 	message.channel.send(`
-발신이 완료되었습니다!
-공지 내용은 [ ${reason} + everyone ] 입니다.
-`)
-	 });
-		 
-	 } else {
-		 
+        console.log(`${message.author.username.toString()} (${message.author.id.toString()})> ${message.content.toString()}`);
 	
-	 superagent.get("https://api.myjson.com/bins/sztu0").then((res) => {
-let welcomechannel = res.body;
+               let cmd = msgAr[1]
+	       
+  	let commandfile = bot.commands.get(cmd.slice(prefix.length));
+        if(commandfile) {
+		commandfile.run(bot,message,args);
+	} else {
+		df.sendToDialogflow(msgc, message.author.id).then(result => {
 
-bot.guilds.forEach(g => {
-	 let reason = message.content.replace(`워터야 공지 `, "")
-	 
-	   if(!welcomechannel[g.id]){
-return
-}
-	let msguild = welcomechannel[g.id].welcomechannel	
-	if (msguild === 0) { return }
+      let text = result[0].queryResult.fulfillmentText
 
-	 
-	let cha = msguild
-	let ann = new Discord.RichEmbed()
-	.addField(`워터봇 공지`, `${reason}`)
-	.setColor(`#00ffc1`)
-	.setFooter(`${message.member.user.tag} 가 발신한 공지입니다.`)
-let Ch = bot.channels.get(cha)
-	Ch.sendEmbed(ann)
+      message.channel.send(`${text}`)
 
-})
-	 	 let reason = message.content.replace(`~공지 `, "")
-	 	message.channel.send(`
-발신이 완료되었습니다!
-공지 내용은 [ ${reason} ] 입니다.
-`)
-	 });	 
-		 
-	 }
- } else {
-	 message.channel.send('당신은 봇 관리자로 등록되어있지 않습니다.')
- }
-};
-	
-}
+         }).catch(er => {
+            console.log(er)
+         })
+		
+	}
+
 
 
 	
