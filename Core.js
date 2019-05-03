@@ -29,6 +29,92 @@ fs.readdir("./commands/", (err, files) => {
 
 });
 
+var CoOne = 1000
+var CoTwo = 1000
+var CoThr = 1000
+var CoFor = 1000
+var CoFive = 1000
+
+bot.on("ready", async() => {
+
+	console.log("started")
+
+
+setInterval(() => {
+
+let ProbOne = Math.floor(Math.random() * (3)) + 0;
+let ProbTwo = Math.floor(Math.random() * (3)) + 0;
+let ProbThr = Math.floor(Math.random() * (3)) + 0;
+let ProbFor = Math.floor(Math.random() * (3)) + 0;
+let ProbFive = Math.floor(Math.random() * (3)) + 0;
+
+let CoOnePrice = Math.floor(Math.random() * (500)) + 0;
+let CoTwoPrice = Math.floor(Math.random() * (500)) + 0;
+let CoThreePrice = Math.floor(Math.random() * (500)) + 0;
+let CoFourPrice = Math.floor(Math.random() * (500)) + 0;
+let CoFivePrice = Math.floor(Math.random() * (500)) + 0;
+
+if (ProbOne === 1) {
+
+CoOne = parseInt(CoOne) + parseInt(CoOnePrice)
+
+} else if (ProbOne === 0) {
+
+	CoOne = CoOne - CoOnePrice
+
+} else {
+
+CoTwo = CoTwo
+
+
+ }
+
+if (ProbTwo === 1) {
+
+	CoTwo = CoTwo + CoTwoPrice
+
+} else if (ProbTwo === 0) {
+
+	CoTwo = CoTwo - CoTwoPrice
+
+} else {
+
+	CoTwo = CoTwo
+}
+
+if (ProbThr === 1) {
+	CoThr = CoThr + CoThreePrice
+} else if (ProbThr === 0) {
+	CoThr = CoThr - CoThreePrice
+} else {
+	CoThr = CoThr
+}
+
+if (ProbFor === 1) {
+	CoFor = CoFor + CoFourPrice
+} else if (ProbFor === 0) {
+	CoFor = CoFor - CoFourPrice
+} else {
+	CoFor = CoFor
+}
+
+if (ProbFive === 1) {
+	CoFive = CoFive + CoFivePrice
+} else if (ProbFive === 0) {
+	CoFive = CoFive - CoFivePrice
+} else {
+	CoFive = CoFive
+}
+
+
+
+
+console.log("re")
+
+
+}, 60000);
+
+});
 
 bot.on('guildMemberAdd', member => {
 superagent.get("https://api.myjson.com/bins/z6qiw").then((res) => {
