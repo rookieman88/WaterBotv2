@@ -86,7 +86,7 @@ bot.on("message", async message => {
 		let i = msgAr[0];
 		let args = msgAr.slice(2);
 	
-	if (!message.content.startsWith('워터야 ')) { return; } 
+	if (!message.content.startsWith('워터야')) { return; } 
         console.log(`${message.author.username.toString()} (${message.author.id.toString()})> ${message.content.toString()}`);
 	
                let cmd = msgAr[1]
