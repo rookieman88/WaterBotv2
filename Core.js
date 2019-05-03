@@ -90,9 +90,8 @@ bot.on("message", async message => {
         console.log(`${message.author.username.toString()} (${message.author.id.toString()})> ${message.content.toString()}`);
 	
                let cmd = msgAr[1]
-	       message.channel.send(`[${cmd}]`)
 	       
-  	let commandfile = bot.commands.get(cmd.slice(prefix.length));
+  	let commandfile = bot.commands.get(cmd);
 	if ('워터야' === message.content) {
 		message.channel.send('?')
 	} else {
