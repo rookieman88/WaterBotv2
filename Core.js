@@ -34,12 +34,20 @@ var CoTwo = 1000
 var CoThr = 1000
 var CoFor = 1000
 var CoFive = 1000
+var CoSix = 1000
+var CoSev = 1000
+var CoEig = 1000
+
 
 let BStock1;
 let BStock2;
 let BStock3;
 let BStock4;
 let BStock5;
+let BStock6;
+let BStock7;
+let BStock8;
+
 
 bot.on("ready", async() => {
 
@@ -56,13 +64,19 @@ let ProbTwo = Math.floor(Math.random() * (3)) + 0;
 let ProbThr = Math.floor(Math.random() * (3)) + 0;
 let ProbFor = Math.floor(Math.random() * (3)) + 0;
 let ProbFive = Math.floor(Math.random() * (3)) + 0;
+let ProbSix = Math.floor(Math.random() * (3)) + 0;
+let ProbSev = Math.floor(Math.random() * (3)) + 0;
+let ProbEig = Math.floor(Math.random() * (3)) + 0;
 
 let CoOnePrice = Math.floor(Math.random() * (500)) + 0;
 let CoTwoPrice = Math.floor(Math.random() * (500)) + 0;
 let CoThreePrice = Math.floor(Math.random() * (500)) + 0;
 let CoFourPrice = Math.floor(Math.random() * (500)) + 0;
 let CoFivePrice = Math.floor(Math.random() * (500)) + 0;
-
+let CoSixPrice = Math.floor(Math.random() * (500)) + 0;
+let CoSevPrice = Math.floor(Math.random() * (500)) + 0;
+let CoEigPrice = Math.floor(Math.random() * (500)) + 0;
+			 
 if (ProbOne === 1) {
 
 CoOne = parseInt(CoOne) + parseInt(CoOnePrice)
@@ -152,7 +166,54 @@ if (ProbFive === 1) {
 	CoFive = CoFive
 	BStock5 = CoFive
 }
-
+			 
+if (ProbSix === 1) {
+	CoSix = parseInt(CoSix) + parseInt(CoSixPrice)
+	BStock5 = parseInt(CoSix) + parseInt(CoSixPrice)
+} else if (ProbSix === 0) {
+	if (CoSixPrice > CoSix) {
+		CoSix = parseInt(CoSix) + parseInt(CoSixPrice)
+		BStock5 = parseInt(CoSix) + parseInt(CoSixPrice)
+	} else {
+	CoSix = CoSix - CoSixPrice
+		BStock5 = CoSix - CoSixPrice
+	}
+} else {
+	CoSix = CoSix
+	BStock5 = CoSix
+}
+			 
+if (ProbSev === 1) {
+	CoSev = parseInt(CoSev) + parseInt(CoSevPrice)
+	BStock5 = parseInt(CoSev) + parseInt(CoSevPrice)
+} else if (ProbSev === 0) {
+	if (CoSevPrice > CoSev) {
+		CoSev = parseInt(CoSev) + parseInt(CoSevPrice)
+		BStock5 = parseInt(CoSev) + parseInt(CoSevPrice)
+	} else {
+	CoSev = CoSev - CoSevPrice
+		BStock5 = CoSev - CoSevPrice
+	}
+} else {
+	CoSev = CoSev
+	BStock5 = CoSev
+}
+			 
+if (ProbEig === 1) {
+	CoEig = parseInt(CoEig) + parseInt(CoEigPrice)
+	BStock5 = parseInt(CoEig) + parseInt(CoEigPrice)
+} else if (ProbEig === 0) {
+	if (CoEigPrice > CoEig) {
+		CoEig = parseInt(CoEig) + parseInt(CoEigPrice)
+		BStock5 = parseInt(CoEig) + parseInt(CoEigPrice)
+	} else {
+	CoEig = CoEig - CoEigPrice
+		BStock5 = CoEig - CoEigPrice
+	}
+} else {
+	CoEig = CoEig
+	BStock5 = CoEig
+}
 			 
 	
 		 
@@ -161,14 +222,20 @@ if (ProbFive === 1) {
     TwoStock: CoTwo,
     ThrStock: CoThr,
     ForStock: CoFor,
-    FivStock: CoFive
+    FivStock: CoFive,
+    SixStock: CoSix,
+    SevStock: CoSev,
+    EigStock: CoEig
 };
  StocksPrice["StocksB"] = {
     OneStockB: BStock1,
     TwoStockB: BStock2,
     ThrStockB: BStock3,
     ForStockB: BStock4,
-    FivStockB: BStock5
+    FivStockB: BStock5,
+    SixStockB: BStock6,
+    SevStockB: BStock7,
+    EigStockB: BStock8
 };
 		superagent.put("https://api.myjson.com/bins/152s38").send(StocksPrice).catch((err) => console.log(err));
 		superagent.put("https://api.myjson.com/bins/152s38").send(StocksPrice).catch((err) => console.log(err));
