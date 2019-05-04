@@ -50,8 +50,8 @@ module.exports.run = async (bot, message, args) => {
 		let bumal;
 	  
 	          if (collected.array()[0].emoji.name == computer_choice) {
-          mal = "무승부를 했다!"
-			  bumal = "이런.."
+          mal = `${message.author.username} [ ${computer_choice} ] VS 워터 [ ${computer_choice} ]`
+			  bumal = "무승부.."
         }
         else if (collected.array()[0].emoji.name == paper && computer_choice == sissor) {
 		mal = `${message.author.username} [ :hand_splayed: ] VS 워터 [ :v: ]`
