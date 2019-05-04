@@ -109,13 +109,15 @@ if (ProbFive === 1) {
 	CoFive = CoFive
 }
 
+			 
+	
 		 
  StocksPrice["Stocks"] = {
-    OneStock: parseInt(OneStock),
-    TwoStock: parseInt(TwoStock),
-    ThrStock: ParseInt(ThrStock),
-    ForStock: parseInt(ForStock),
-    FivStock: parseInt(FivStock)
+    OneStock: CoOne,
+    TwoStock: CoTwo,
+    ThrStock: CoThr,
+    ForStock: CoFor,
+    FivStock: CoFive
 };
 		 
 	 });
