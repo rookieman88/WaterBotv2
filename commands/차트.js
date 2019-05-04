@@ -18,11 +18,11 @@ let ThrPs = StocksPrice["StocksB"].ThrStockB
 let ForPs = StocksPrice["StocksB"].ForStockB
 let FivPs = StocksPrice["StocksB"].FivStockB
 
-let cprice1 = OnePs - OneP
-let cprice2 = TwoPs - TwoP
-let cprice3 = ThrPs - ThrP
-let cprice4 = ForPs - ForP
-let cprice5 = FivPs - FivP
+var cprice1 = OnePs - OneP
+var cprice2 = TwoPs - TwoP
+var cprice3 = ThrPs - ThrP
+var cprice4 = ForPs - ForP
+var cprice5 = FivPs - FivP
 
 if (OneP < OnePs) {
      cprice1 = `- 회사1 : ${OneP} (` + ` - ${cprice1})`
