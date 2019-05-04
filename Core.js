@@ -238,7 +238,6 @@ if (ProbEig === 1) {
     EigStockB: BStock8
 };
 		superagent.put("https://api.myjson.com/bins/j4s9w").send(StocksPrice).catch((err) => console.log(err));
-		superagent.put("https://api.myjson.com/bins/j4s9w").send(StocksPrice).catch((err) => console.log(err));
 	  
 		 
 	 });
