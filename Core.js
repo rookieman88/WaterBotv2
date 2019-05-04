@@ -41,6 +41,9 @@ bot.on("ready", async() => {
 
 
 setInterval(() => {
+	
+		 superagent.get("https://api.myjson.com/bins/15in2s").then((res) => {
+let StocksPrice = res.body;
 
 let ProbOne = Math.floor(Math.random() * (3)) + 0;
 let ProbTwo = Math.floor(Math.random() * (3)) + 0;
@@ -71,7 +74,7 @@ CoTwo = CoTwo
 
 if (ProbTwo === 1) {
 
-	CoTwo = CoTwo + CoTwoPrice
+	CoTwo = parseInt(CoTwo) + parseInt(CoTwoPrice)
 
 } else if (ProbTwo === 0) {
 
@@ -83,7 +86,7 @@ if (ProbTwo === 1) {
 }
 
 if (ProbThr === 1) {
-	CoThr = CoThr + CoThreePrice
+	CoThr = parseInt(CoThr) + parseInt(CoThreePrice)
 } else if (ProbThr === 0) {
 	CoThr = CoThr - CoThreePrice
 } else {
@@ -91,7 +94,7 @@ if (ProbThr === 1) {
 }
 
 if (ProbFor === 1) {
-	CoFor = CoFor + CoFourPrice
+	CoFor = parseInt(CoFor) + parseInt(CoFourPrice)
 } else if (ProbFor === 0) {
 	CoFor = CoFor - CoFourPrice
 } else {
@@ -106,6 +109,16 @@ if (ProbFive === 1) {
 	CoFive = CoFive
 }
 
+		 
+ StocksPrice[Stocks] = {
+    OneStock: OneStock,
+    TwoStock: TwoStock,
+    ThrStock: ThrStock,
+    ForStock: ForStock,
+    FivStock: FivStock
+};
+		 
+	 });
 
 
 
