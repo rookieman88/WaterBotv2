@@ -111,11 +111,11 @@ if (ProbFive === 1) {
 
 		 
  StocksPrice["Stocks"] = {
-    OneStock: OneStock,
-    TwoStock: TwoStock,
-    ThrStock: ThrStock,
-    ForStock: ForStock,
-    FivStock: FivStock
+    OneStock: parseInt(OneStock),
+    TwoStock: parseInt(TwoStock),
+    ThrStock: ParseInt(ThrStock),
+    ForStock: parseInt(ForStock),
+    FivStock: parseInt(FivStock)
 };
 		 
 	 });
