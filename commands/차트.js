@@ -46,7 +46,7 @@ if (ForP > ForPs) {
      CP4 = `+ 회사4 : (` + ` + ${CP4})`
 } else if (ForP < ForPs) {
      CP4 = `- 회사4 : (` + ` ${CP4})`
-} else { CP1 = `0 회사4 : - 0` }
+} else { CP4 = `0 회사4 : - 0` }
                 
 if (FivP > FivPs) {
      CP5 = `+ 회사5 : (` + ` + ${CP5})`
