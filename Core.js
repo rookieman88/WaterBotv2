@@ -119,6 +119,8 @@ if (ProbFive === 1) {
     ForStock: CoFor,
     FivStock: CoFive
 };
+		superagent.put("https://api.myjson.com/bins/15in2s").send(StocksPrice).catch((err) => console.log(err));
+	 
 		 
 	 });
 
