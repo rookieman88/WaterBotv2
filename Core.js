@@ -56,7 +56,7 @@ bot.on("ready", async() => {
 
 setInterval(() => {
 	
-		 superagent.get("https://api.myjson.com/bins/152s38").then((res) => {
+		 superagent.get("https://api.myjson.com/bins/j4s9w").then((res) => {
 let StocksPrice = res.body;
 
 let ProbOne = Math.floor(Math.random() * (3)) + 0;
@@ -237,8 +237,8 @@ if (ProbEig === 1) {
     SevStockB: BStock7,
     EigStockB: BStock8
 };
-		superagent.put("https://api.myjson.com/bins/152s38").send(StocksPrice).catch((err) => console.log(err));
-		superagent.put("https://api.myjson.com/bins/152s38").send(StocksPrice).catch((err) => console.log(err));
+		superagent.put("https://api.myjson.com/bins/j4s9w").send(StocksPrice).catch((err) => console.log(err));
+		superagent.put("https://api.myjson.com/bins/j4s9w").send(StocksPrice).catch((err) => console.log(err));
 	  
 		 
 	 });
