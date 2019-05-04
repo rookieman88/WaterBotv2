@@ -25,30 +25,40 @@ var cprice4 = ForPs - ForP
 var cprice5 = FivPs - FivP
 
 if (OneP > OnePs) {
+          cprice1 = `${cprice1}`
+	     cprice1 = cprice1.replace("-", "");
      cprice1 = `- 회사1 : ${OneP} (` + ` - ${cprice1})`
 } else if (OneP < OnePs) {
      cprice1 = `+ 회사1 : ${OneP} (` + ` + ${cprice1})`
 } else { cprice1 = `0 회사1 : ${OneP} ( - 0 )` }
                 
 if (TwoP > TwoPs) {
+          cprice2 = `${cprice2}`
+	     cprice2 = cprice2.replace("-", "");
      cprice2 = `- 회사2 : ${TwoP} (` + ` - ${cprice2})`
 } else if (TwoP < TwoPs) {
      cprice2 = `+ 회사2 : ${TwoP} (` + ` + ${cprice2})`
 } else { cprice2 = `0 회사1 : ${TwoP} ( - 0 )` }
                 
 if (ThrP > ThrPs) {
+          cprice3 = `${cprice3}`
+	     cprice3 = cprice3.replace("-", "");
      cprice3 = `- 회사3 : ${ThrP} (` + ` - ${cprice3})`
 } else if (ThrP < ThrPs) {
      cprice3 = `+ 회사3 : ${ThrP} (` + ` + ${cprice3})`
 } else { cprice3 = `0 회사3 : ${ThrP} ( - 0 )` }
                 
 if (ForP > ForPs) {
+          cprice4 = `${cprice4}`
+	     cprice4 = cprice4.replace("-", "");
      cprice4 = `- 회사4 : ${ForP} (` + ` - ${cprice4})`
 } else if (ForP < ForPs) {
      cprice4 = `+ 회사4 : ${ForP} (` + ` + ${cprice4})`
 } else { cprice4 = `0 회사4 : ${ForP} ( - 0 )` }
                 
 if (FivP > FivPs) {
+          cprice5 = `${cprice5}`
+	     cprice5 = cprice5.replace("-", "");
      cprice5 = `- 회사5 : ${FivP} (` + ` - ${cprice5})`
 } else if (FivP < FivPs) {
      cprice5 = `+ 회사5 : ${FivP} (` + ` + ${cprice5})`
