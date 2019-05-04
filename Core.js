@@ -35,6 +35,12 @@ var CoThr = 1000
 var CoFor = 1000
 var CoFive = 1000
 
+let BStock1;
+let BStock2;
+let BStock3;
+let BStock4;
+let BStock5;
+
 bot.on("ready", async() => {
 
 	console.log("started")
@@ -42,7 +48,7 @@ bot.on("ready", async() => {
 
 setInterval(() => {
 	
-		 superagent.get("https://api.myjson.com/bins/15in2s").then((res) => {
+		 superagent.get("https://api.myjson.com/bins/152s38").then((res) => {
 let StocksPrice = res.body;
 
 let ProbOne = Math.floor(Math.random() * (3)) + 0;
@@ -60,16 +66,20 @@ let CoFivePrice = Math.floor(Math.random() * (500)) + 0;
 if (ProbOne === 1) {
 
 CoOne = parseInt(CoOne) + parseInt(CoOnePrice)
+	BStock1 = parseInt(CoOne) + parseInt(CoOnePrice)
 
 } else if (ProbOne === 0) {
 if (CoOnePrice > CoOne) {
 	CoOne = parseInt(CoOne) + (CoOnePrice)
+	BStock1 = parseInt(CoOne) + (CoOnePrice)
 } else {
 	CoOne = CoOne - CoOnePrice
+	BStock1 = CoOne - CoOnePrice
 }
 } else {
 
-CoTwo = CoTwo
+CoOne = CoOne
+	BStock1 = CoOne
 
 
  }
@@ -77,54 +87,70 @@ CoTwo = CoTwo
 if (ProbTwo === 1) {
 
 	CoTwo = parseInt(CoTwo) + parseInt(CoTwoPrice)
+	BStock2 = parseInt(CoTwo) + parseInt(CoTwoPrice)
 
 } else if (ProbTwo === 0) {
 	if (CoTwoPrice > CoTwo) {
 		CoTwo = parseInt(CoTwo) + parseInt(CoTwoPrice)
+		BStock2 = parseInt(CoTwo) + parseInt(CoTwoPrice)
 	} else {
 
 	CoTwo = CoTwo - CoTwoPrice
+		BStock2 = CoTwo - CoTwoPrice
 	}
 
 } else {
 
 	CoTwo = CoTwo
+	BStock2 = CoTwo
 }
 
 if (ProbThr === 1) {
 	CoThr = parseInt(CoThr) + parseInt(CoThreePrice)
+	BStock3 = parseInt(CoThr) + parseInt(CoThreePrice)
 } else if (ProbThr === 0) {
 	if (CoThreePrice > CoThr) {
 		CoThr = parseInt(CoThr) + parseInt(CoThreePrice)
+		BStock3 = parseInt(CoThr) + parseInt(CoThreePrice)
 	} else {
 	CoThr = CoThr - CoThreePrice
+		BStock3 = CoThr - CoThreePrice
 	}
 } else {
 	CoThr = CoThr
+	BStock3 = CoThr
 }
 
 if (ProbFor === 1) {
 	CoFor = parseInt(CoFor) + parseInt(CoFourPrice)
+	BStock4 = parseInt(CoFor) + parseInt(CoFourPrice)
 } else if (ProbFor === 0) {
 	if (CoFourPrice > CoFor) {
 		CoFor = parseInt(CoFor) + parseInt(CoFourPrice)
+		BStock4 = parseInt(CoFor) + parseInt(CoFourPrice)
 	} else {
 	CoFor = CoFor - CoFourPrice
+		BStock4 = CoFor - CoFourPrice
 	}
 } else {
 	CoFor = CoFor
+	BStock4 = CoFor
 }
 
 if (ProbFive === 1) {
-	CoFive = CoFive + CoFivePrice
+	CoFive = parseInt(CoFive) + parseInt(CoFivePrice)
+	BStock5 = parseInt(CoFive) + parseInt(CoFivePrice)
 } else if (ProbFive === 0) {
 	if (CoFivePrice > CoFive) {
 		CoFive = parseInt(CoFive) + parseInt(CoFivePrice)
+		BStock5 = parseInt(CoFive) + parseInt(CoFivePrice)
 	} else {
 	CoFive = CoFive - CoFivePrice
+		BStock5 = CoFive - CoFivePrice
 	}
 } else {
 	CoFive = CoFive
+	BStock5 = CoFive
 }
 
 			 
@@ -137,8 +163,16 @@ if (ProbFive === 1) {
     ForStock: CoFor,
     FivStock: CoFive
 };
-		superagent.put("https://api.myjson.com/bins/15in2s").send(StocksPrice).catch((err) => console.log(err));
-	 
+ StocksPrice["StocksB"] = {
+    OneStockB: BStock1,
+    TwoStockB: BStock2,
+    ThrStockB: BStock3,
+    ForStockB: BStock4,
+    FivStockB: BStock5
+};
+		superagent.put("https://api.myjson.com/bins/152s38").send(StocksPrice).catch((err) => console.log(err));
+		superagent.put("https://api.myjson.com/bins/152s38").send(StocksPrice).catch((err) => console.log(err));
+	  
 		 
 	 });
 
