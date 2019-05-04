@@ -169,50 +169,50 @@ if (ProbFive === 1) {
 			 
 if (ProbSix === 1) {
 	CoSix = parseInt(CoSix) + parseInt(CoSixPrice)
-	BStock5 = parseInt(CoSix) + parseInt(CoSixPrice)
+	BStock6 = parseInt(CoSix) + parseInt(CoSixPrice)
 } else if (ProbSix === 0) {
 	if (CoSixPrice > CoSix) {
 		CoSix = parseInt(CoSix) + parseInt(CoSixPrice)
-		BStock5 = parseInt(CoSix) + parseInt(CoSixPrice)
+		BStock6 = parseInt(CoSix) + parseInt(CoSixPrice)
 	} else {
 	CoSix = CoSix - CoSixPrice
-		BStock5 = CoSix - CoSixPrice
+		BStock6 = CoSix - CoSixPrice
 	}
 } else {
 	CoSix = CoSix
-	BStock5 = CoSix
+	BStock6 = CoSix
 }
 			 
 if (ProbSev === 1) {
 	CoSev = parseInt(CoSev) + parseInt(CoSevPrice)
-	BStock5 = parseInt(CoSev) + parseInt(CoSevPrice)
+	BStock7 = parseInt(CoSev) + parseInt(CoSevPrice)
 } else if (ProbSev === 0) {
 	if (CoSevPrice > CoSev) {
 		CoSev = parseInt(CoSev) + parseInt(CoSevPrice)
-		BStock5 = parseInt(CoSev) + parseInt(CoSevPrice)
+		BStock7 = parseInt(CoSev) + parseInt(CoSevPrice)
 	} else {
 	CoSev = CoSev - CoSevPrice
-		BStock5 = CoSev - CoSevPrice
+		BStock7 = CoSev - CoSevPrice
 	}
 } else {
 	CoSev = CoSev
-	BStock5 = CoSev
+	BStock7 = CoSev
 }
 			 
 if (ProbEig === 1) {
 	CoEig = parseInt(CoEig) + parseInt(CoEigPrice)
-	BStock5 = parseInt(CoEig) + parseInt(CoEigPrice)
+	BStock8 = parseInt(CoEig) + parseInt(CoEigPrice)
 } else if (ProbEig === 0) {
 	if (CoEigPrice > CoEig) {
 		CoEig = parseInt(CoEig) + parseInt(CoEigPrice)
-		BStock5 = parseInt(CoEig) + parseInt(CoEigPrice)
+		BStock8 = parseInt(CoEig) + parseInt(CoEigPrice)
 	} else {
 	CoEig = CoEig - CoEigPrice
-		BStock5 = CoEig - CoEigPrice
+		BStock8 = CoEig - CoEigPrice
 	}
 } else {
 	CoEig = CoEig
-	BStock5 = CoEig
+	BStock8 = CoEig
 }
 			 
 	
