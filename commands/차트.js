@@ -18,57 +18,57 @@ let ThrPs = StocksPrice["StocksB"].ThrStockB
 let ForPs = StocksPrice["StocksB"].ForStockB
 let FivPs = StocksPrice["StocksB"].FivStockB
 
-let CP1 = OnePs - OneP
-let CP2 = TwoPs - TwoP
-let CP3 = ThrPs - ThrP
-let CP4 = ForPs - ForP
-let CP5 = FivPs - FivP
+let cprice1 = OnePs - OneP
+let cprice2 = TwoPs - TwoP
+let cprice3 = ThrPs - ThrP
+let cprice4 = ForPs - ForP
+let cprice5 = FivPs - FivP
 
 if (OneP < OnePs) {
-     CP1 = `- 회사1 : ${OneP} (` + ` - ${CP1})`
+     cprice1 = `- 회사1 : ${OneP} (` + ` - ${cprice1})`
 } else if (OneP > OnePs) {
-     CP1 = CP1.replace("-", "")
-     CP1 = `+ 회사1 : ${OneP} (` + ` + ${CP1})`
-} else { CP1 = `0 회사1 : ${OneP} ( - 0 )` }
+     cprice1 = cprice1.replace("-", "");
+     cprice1 = `+ 회사1 : ${OneP} (` + ` + ${cprice1})`
+} else { cprice1 = `0 회사1 : ${OneP} ( - 0 )` }
                 
 if (TwoP < TwoPs) {
-     CP2 = `- 회사2 : ${TwoP} (` + ` - ${CP2})`
+     cprice2 = `- 회사2 : ${TwoP} (` + ` - ${cprice2})`
 } else if (TwoP > TwoPs) {
-     CP2 = CP2.replace("-", "")
-     CP2 = `+ 회사2 : ${TwoP} (` + ` + ${CP2})`
-} else { CP2 = `0 회사1 : ${TwoP} ( - 0 )` }
+     cprice2 = cprice2.replace("-", "");
+     cprice2 = `+ 회사2 : ${TwoP} (` + ` + ${cprice2})`
+} else { cprice2 = `0 회사1 : ${TwoP} ( - 0 )` }
                 
 if (ThrP < ThrPs) {
-     CP3 = `- 회사3 : ${ThrP} (` + ` - ${CP3})`
+     cprice3 = `- 회사3 : ${ThrP} (` + ` - ${cprice3})`
 } else if (ThrP > ThrPs) {
-     CP3 = CP3.replace("-", "")
-     CP3 = `+ 회사3 : ${ThrP} (` + ` + ${CP3})`
-} else { CP3 = `0 회사3 : ${ThrP} ( - 0 )` }
+     cprice3 = cprice3.replace("-", "");
+     cprice3 = `+ 회사3 : ${ThrP} (` + ` + ${cprice3})`
+} else { cprice3 = `0 회사3 : ${ThrP} ( - 0 )` }
                 
 if (ForP < ForPs) {
-     CP4 = `- 회사4 : ${ForP} (` + ` - ${CP4})`
+     cprice4 = `- 회사4 : ${ForP} (` + ` - ${cprice4})`
 } else if (ForP > ForPs) {
-     CP4 = CP4.replace("-", "")
-     CP4 = `+ 회사4 : ${ForP} (` + ` + ${CP4})`
-} else { CP4 = `0 회사4 : ${ForP} ( - 0 )` }
+     cprice4 = cprice4.replace("-", "");
+     cprice4 = `+ 회사4 : ${ForP} (` + ` + ${cprice4})`
+} else { cprice4 = `0 회사4 : ${ForP} ( - 0 )` }
                 
 if (FivP < FivPs) {
-     CP5 = `- 회사5 : ${FivP} (` + ` - ${CP5})`
+     cprice5 = `- 회사5 : ${FivP} (` + ` - ${cprice5})`
 } else if (FivP > FivPs) {
-     CP5 = CP5.replace("-", "")
-     CP5 = `+ 회사5 : ${FivP} (` + ` + ${CP5})`
-} else { CP5 = `0 회사5 : ${FivP} ( - 0 )` }
+     cprice5 = cprice5.replace("-", "");
+     cprice5 = `+ 회사5 : ${FivP} (` + ` + ${cprice5})`
+} else { cprice5 = `0 회사5 : ${FivP} ( - 0 )` }
      
  
 
 message.channel.send("< 시즌 베타 1 주식 차트>\n(차트는 1분에 한번씩 업데이트됩니다.)" + `
 
 \`\`\`diff
-${CP1}
-${CP2}
-${CP3}
-${CP4}
-${CP5}
+${cprice1}
+${cprice2}
+${cprice3}
+${cprice4}
+${cprice5}
 \`\`\`
 
  ` +
