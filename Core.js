@@ -110,7 +110,7 @@ if (ProbFive === 1) {
 }
 
 		 
- StocksPrice[Stocks] = {
+ StocksPrice["Stocks"] = {
     OneStock: OneStock,
     TwoStock: TwoStock,
     ThrStock: ThrStock,
