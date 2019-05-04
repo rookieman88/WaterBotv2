@@ -62,9 +62,11 @@ if (ProbOne === 1) {
 CoOne = parseInt(CoOne) + parseInt(CoOnePrice)
 
 } else if (ProbOne === 0) {
-
+if (CoOnePrice > CoOne) {
+	CoOne = parseInt(CoOne) + (CoOnePrice)
+} else {
 	CoOne = CoOne - CoOnePrice
-
+}
 } else {
 
 CoTwo = CoTwo
@@ -77,8 +79,12 @@ if (ProbTwo === 1) {
 	CoTwo = parseInt(CoTwo) + parseInt(CoTwoPrice)
 
 } else if (ProbTwo === 0) {
+	if (CoTwoPrice > CoTwo) {
+		CoTwo = parseInt(CoTwo) + parseInt(CoTwoPrice)
+	} else {
 
 	CoTwo = CoTwo - CoTwoPrice
+	}
 
 } else {
 
@@ -88,7 +94,11 @@ if (ProbTwo === 1) {
 if (ProbThr === 1) {
 	CoThr = parseInt(CoThr) + parseInt(CoThreePrice)
 } else if (ProbThr === 0) {
+	if (CoThreePrice > CoThr) {
+		CoThr = parseInt(CoThr) + parseInt(CoThreePrice)
+	} else {
 	CoThr = CoThr - CoThreePrice
+	}
 } else {
 	CoThr = CoThr
 }
@@ -96,7 +106,11 @@ if (ProbThr === 1) {
 if (ProbFor === 1) {
 	CoFor = parseInt(CoFor) + parseInt(CoFourPrice)
 } else if (ProbFor === 0) {
+	if (CoFourPrice > CoFor) {
+		CoFor = parseInt(CoFor) + parseInt(CoFourPrice)
+	} else {
 	CoFor = CoFor - CoFourPrice
+	}
 } else {
 	CoFor = CoFor
 }
@@ -104,7 +118,11 @@ if (ProbFor === 1) {
 if (ProbFive === 1) {
 	CoFive = CoFive + CoFivePrice
 } else if (ProbFive === 0) {
+	if (CoFivePrice > CoFive) {
+		CoFive = parseInt(CoFive) + parseInt(CoFivePrice)
+	} else {
 	CoFive = CoFive - CoFivePrice
+	}
 } else {
 	CoFive = CoFive
 }
