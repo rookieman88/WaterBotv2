@@ -5,6 +5,17 @@ module.exports.run = async (bot, message, args) => {
 
      	 superagent.get("https://api.myjson.com/bins/c19z0").then((res) => {
 let UserStocks = res.body;
+                
+                if(!UserStocks[message.author.id]) {
+                     UserStocks[message.author.id] = {
+                          WatCoin: 0,
+                          UserOneStock: 0,
+                          UserTwoStock: 0,
+                          UserThrStock: 0,
+                          UserForStock: 0,
+                          UserFivStock: 0
+                     }
+                }
          
          if (args[0] === '회사1') {
            
