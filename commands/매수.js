@@ -17,6 +17,8 @@ let UserStocks = res.body;
                      }
                 }
          
+                if(!args[0]) { return message.channel.send('매수할 회사이름을 입력해주세요') }
+                
          if (args[0] === '회사1') {
            
            if (!args[1]) { return message.channel.send('회사1 을 얼마나 매수할지 입력해주세요\n예) 워터야 매수 회사1 3') }
