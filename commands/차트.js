@@ -99,7 +99,7 @@ if (EigP > EigPs) {
  
 let TimeLeft = StocksPrice["Timer"].left
 		 
-message.channel.send("< 시즌 베타 1 주식 차트>\n(차트는 1분에 한번씩 업데이트됩니다.)" + `
+message.channel.send("< 베타 1 시즌 주식 차트>" + `
 
 \`\`\`diff
 ${cprice1}
