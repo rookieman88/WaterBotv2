@@ -270,7 +270,7 @@ StocksPrice["Timer"] = {
 };
 	if (TimeToChange === 0) {
 		StocksPrice["Timer"] = {
-                   left: 60
+                   left: 61
                 };
 	}
 	
