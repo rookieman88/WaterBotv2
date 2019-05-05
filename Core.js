@@ -52,6 +52,13 @@ let BStock8;
 bot.on("ready", async() => {
 
 	console.log("started")
+	superagent.get("https://api.myjson.com/bins/j4s9w").then((res) => {
+        let StocksPrice = res.body;
+                StocksPrice["Timer"] = {
+                   left: 60
+                };
+		superagent.put("https://api.myjson.com/bins/j4s9w").send(StocksPrice).catch((err) => console.log(err));
+	});
 
 
 setInterval(() => {
@@ -253,11 +260,11 @@ setInterval(() => {
 	
 superagent.get("https://api.myjson.com/bins/j4s9w").then((res) => {
 let StocksPrice = res.body;
-	if(!StocksPrice["Timer"]) {
+
 		StocksPrice["Timer"] = {
                    left: 60
                 };	
-	}
+
 		
 	let TimeToChange = StocksPrice["Timer"].left
 StocksPrice["Timer"] = {
