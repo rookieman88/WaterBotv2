@@ -261,7 +261,7 @@ let StocksPrice = res.body;
 		
 	let TimeToChange = StocksPrice["Timer"].left
 StocksPrice["Timer"] = {
-      left: parseInt(TimeToChange) - parseInt(1)
+      left: TimeToChange - 1
 };
 	if (TimeToChange === 0) {
 		StocksPrice["Timer"] = {
