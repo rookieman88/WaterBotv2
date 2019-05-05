@@ -271,9 +271,11 @@ StocksPrice["Timer"] = {
 	
 	
 superagent.put("https://api.myjson.com/bins/j4s9w").send(StocksPrice).catch((err) => console.log(err));
+	});
+	
 	}, 1000);
 	
-});
+
 
 });
 
