@@ -97,7 +97,8 @@ if (EigP > EigPs) {
      cprice8 = `+ 회사8 : ${EigP} (` + ` ▲ ${cprice8})`
 } else { cprice8 = `0 회사8 : ${EigP} ( - 0 )` }
  
-
+let TimeLeft = StocksPrice["Timer"].left
+		 
 message.channel.send("< 시즌 베타 1 주식 차트>\n(차트는 1분에 한번씩 업데이트됩니다.)" + `
 
 \`\`\`diff
@@ -110,6 +111,8 @@ ${cprice6}
 ${cprice7}
 ${cprice8}
 \`\`\`
+
+다음변동: ${TimeLeft}초 후
 
  ` +
 "버그를 발견하신 분은 ~문의 로 버그제보좀"
