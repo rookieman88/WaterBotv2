@@ -268,7 +268,7 @@ let StocksPrice = res.body;
 StocksPrice["Timer"] = {
       left: TimeToChange - 1
 };
-	if (TimeToChange < 0) {
+	if (TimeToChange === 0) {
 		StocksPrice["Timer"] = {
                    left: 60
                 };
