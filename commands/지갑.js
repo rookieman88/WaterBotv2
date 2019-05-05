@@ -62,11 +62,11 @@ let UserStocks = res.body;
          
          
         message.channel.send(`${message.author.username} 님의 지갑입니다
-/`/`/`
+\`\`\`
 보유 금액: ${UserCoins}원
 보유 주식:
 ${StockWallet}
-/`/`/`   
+\`\`\`   
         `)
          
        });
