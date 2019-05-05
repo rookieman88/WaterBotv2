@@ -248,6 +248,32 @@ console.log("re")
 
 
 }, 60000);
+	
+setInterval(() => {
+	
+superagent.get("https://api.myjson.com/bins/j4s9w").then((res) => {
+let StocksPrice = res.body;
+	if(!StocksPrice["Timer"]) {
+		StocksPrice["Timer"] = {
+                   left: 60
+                };	
+	}
+		
+	let TimeToChange = StocksPrice["Timer"].left
+StocksPrice["Timer"] = {
+      left: parseInt(TimeToChange) - parseInt(1)
+};
+	if (TimeToChange === 0) {
+		StocksPrice["Timer"] = {
+                   left: 60
+                };
+	}
+	
+	
+superagent.put("https://api.myjson.com/bins/j4s9w").send(StocksPrice).catch((err) => console.log(err));
+	}, 1000);
+	
+	
 
 });
 
