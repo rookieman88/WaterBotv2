@@ -11,18 +11,27 @@ let TwoP = StocksPrice["Stocks"].TwoStock
 let ThrP = StocksPrice["Stocks"].ThrStock
 let ForP = StocksPrice["Stocks"].ForStock
 let FivP = StocksPrice["Stocks"].FivStock
+let SixP = StocksPrice["Stocks"].SixStock
+let SevP = StocksPrice["Stocks"].SevStock
+let EigP = StocksPrice["Stocks"].EigStock
 
 let OnePs = StocksPrice["StocksB"].OneStockB
 let TwoPs = StocksPrice["StocksB"].TwoStockB
 let ThrPs = StocksPrice["StocksB"].ThrStockB
 let ForPs = StocksPrice["StocksB"].ForStockB
 let FivPs = StocksPrice["StocksB"].FivStockB
+let SixPs = StocksPrice["StocksB"].SixStockB
+let SevPs = StocksPrice["StocksB"].SevStockB
+let EigPs = StocksPrice["StocksB"].EigStockB
 
 var cprice1 = OnePs - OneP
 var cprice2 = TwoPs - TwoP
 var cprice3 = ThrPs - ThrP
 var cprice4 = ForPs - ForP
 var cprice5 = FivPs - FivP
+var cprice6 = SixPs - SixP
+var cprice7 = SevPs - SevP
+var cprice8 = EigPs - EigP
 
 if (OneP > OnePs) {
           cprice1 = `${cprice1}`
@@ -63,7 +72,30 @@ if (FivP > FivPs) {
 } else if (FivP < FivPs) {
      cprice5 = `+ 회사5 : ${FivP} (` + ` + ${cprice5})`
 } else { cprice5 = `0 회사5 : ${FivP} ( - 0 )` }
-     
+		 
+if (SixP > SixPs) {
+          cprice6 = `${cprice6}`
+	     cprice6 = cprice6.replace("-", "");
+     cprice6 = `- 회사6 : ${SixP} (` + ` - ${cprice6})`
+} else if (SixP < SixPs) {
+     cprice6 = `+ 회사6 : ${SixP} (` + ` + ${cprice6})`
+} else { cprice6 = `0 회사6 : ${SixP} ( - 0 )` }
+		 
+if (SevP > SevPs) {
+          cprice7 = `${cprice7}`
+	     cprice7 = cprice7.replace("-", "");
+     cprice7 = `- 회사7 : ${SevP} (` + ` - ${cprice7})`
+} else if (SevP < SevPs) {
+     cprice7 = `+ 회사7 : ${SevP} (` + ` + ${cprice7})`
+} else { cprice7 = `0 회사7 : ${SevP} ( - 0 )` }
+		 
+if (EigP > EigPs) {
+          cprice8 = `${cprice8}`
+	     cprice8 = cprice8.replace("-", "");
+     cprice8 = `- 회사8 : ${EigP} (` + ` - ${cprice8})`
+} else if (EigP < EigPs) {
+     cprice8 = `+ 회사8 : ${EigP} (` + ` + ${cprice8})`
+} else { cprice8 = `0 회사8 : ${EigP} ( - 0 )` }
  
 
 message.channel.send("< 시즌 베타 1 주식 차트>\n(차트는 1분에 한번씩 업데이트됩니다.)" + `
@@ -74,6 +106,9 @@ ${cprice2}
 ${cprice3}
 ${cprice4}
 ${cprice5}
+${cprice6}
+${cprice7}
+${cprice8}
 \`\`\`
 
  ` +
