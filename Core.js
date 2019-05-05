@@ -82,14 +82,14 @@ let ProbSix = Math.floor(Math.random() * (3)) + 0;
 let ProbSev = Math.floor(Math.random() * (3)) + 0;
 let ProbEig = Math.floor(Math.random() * (3)) + 0;
 
-let CoOnePrice = Math.floor(Math.random() * (500)) + 0;
-let CoTwoPrice = Math.floor(Math.random() * (500)) + 0;
-let CoThreePrice = Math.floor(Math.random() * (500)) + 0;
-let CoFourPrice = Math.floor(Math.random() * (500)) + 0;
-let CoFivePrice = Math.floor(Math.random() * (500)) + 0;
-let CoSixPrice = Math.floor(Math.random() * (500)) + 0;
-let CoSevPrice = Math.floor(Math.random() * (500)) + 0;
-let CoEigPrice = Math.floor(Math.random() * (500)) + 0;
+let CoOnePrice = Math.floor(Math.random() * (280)) + 0;
+let CoTwoPrice = Math.floor(Math.random() * (280)) + 0;
+let CoThreePrice = Math.floor(Math.random() * (280)) + 0;
+let CoFourPrice = Math.floor(Math.random() * (280)) + 0;
+let CoFivePrice = Math.floor(Math.random() * (280)) + 0;
+let CoSixPrice = Math.floor(Math.random() * (280)) + 0;
+let CoSevPrice = Math.floor(Math.random() * (280)) + 0;
+let CoEigPrice = Math.floor(Math.random() * (280)) + 0;
 			 
 if (ProbOne === 1) {
 
