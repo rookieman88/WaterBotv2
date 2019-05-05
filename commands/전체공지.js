@@ -22,7 +22,7 @@ const superagent = require('superagent');
 let welcomechannel = res.body;
 
 bot.guilds.forEach(g => {
-	 let reason = message.content.replace(`~공지 에브리원 `, "")
+	 let reason = message.content.replace(`워터야 공지 에브리원 `, "")
 	 
 	   if(!welcomechannel[g.id]){
 return
@@ -41,7 +41,7 @@ let Ch = bot.channels.get(cha)
 	Ch.send("[ @everyone ]")
 
 })
-	 	 let reason = message.content.replace(`~공지 `, "")
+	 	 let reason = message.content.replace(`워터야 공지 에브리원 `, "")
 	 	message.channel.send(`
 발신이 완료되었습니다!
 공지 내용은 [ ${reason} + everyone ] 입니다.
@@ -55,7 +55,7 @@ let Ch = bot.channels.get(cha)
 let welcomechannel = res.body;
 
 bot.guilds.forEach(g => {
-	 let reason = message.content.replace(`~공지 `, "")
+	 let reason = message.content.replace(`워터야 공지 `, "")
 	 
 	   if(!welcomechannel[g.id]){
 return
@@ -73,7 +73,7 @@ let Ch = bot.channels.get(cha)
 	Ch.sendEmbed(ann)
 
 })
-	 	 let reason = message.content.replace(`~공지 `, "")
+	 	 let reason = message.content.replace(`워터야 공지 `, "")
 	 	message.channel.send(`
 발신이 완료되었습니다!
 공지 내용은 [ ${reason} ] 입니다.
