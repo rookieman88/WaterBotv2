@@ -59,12 +59,19 @@ bot.on("ready", async() => {
                    left: 60
                 };
 		superagent.put("https://api.myjson.com/bins/j4s9w").send(StocksPrice).catch((err) => console.log(err));
-	});
+});	
 
 setInterval(() => {
 	
+	
 		 superagent.get("https://api.myjson.com/bins/j4s9w").then((res) => {
 let StocksPrice = res.body;
+	        let timeleft = StocksPrice["Timer"].left
+		StocksPrice["Timer"] = {
+                   left: timeleft - 1
+                };
+			 
+			 if (timeleft === 0) {
 
 let ProbOne = Math.floor(Math.random() * (3)) + 0;
 let ProbTwo = Math.floor(Math.random() * (3)) + 0;
@@ -244,41 +251,21 @@ if (ProbEig === 1) {
     SevStockB: BStock7,
     EigStockB: BStock8
 };
-		superagent.put("https://api.myjson.com/bins/j4s9w").send(StocksPrice).catch((err) => console.log(err));
-	  
-		 
-	 });
-
-
-
-console.log("re")
-
-
-}, 60000);
-	
-setInterval(() => {
-	
-superagent.get("https://api.myjson.com/bins/j4s9w").then((res) => {
-let StocksPrice = res.body;
-
-	
-
-		
-	let TimeToChange = StocksPrice["Timer"].left
+			 
 StocksPrice["Timer"] = {
-      left: TimeToChange - 1
+		 left: 60
 };
-	if (TimeToChange === -1) {
-		StocksPrice["Timer"] = {
-                   left: 60
-                };
-	}
 	
+console.log("re")
+		 }
+		superagent.put("https://api.myjson.com/bins/j4s9w").send(StocksPrice).catch((err) => console.log(err));
+
+ });
+
+
+
+}, 1000);
 	
-superagent.put("https://api.myjson.com/bins/j4s9w").send(StocksPrice).catch((err) => console.log(err));
-	});
-	
-	}, 1000);
 	
 
 
