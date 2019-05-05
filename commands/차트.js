@@ -47,7 +47,7 @@ if (TwoP > TwoPs) {
      cprice2 = `- 회사2 : ${TwoP} (` + ` ▼ ${cprice2})`
 } else if (TwoP < TwoPs) {
      cprice2 = `+ 회사2 : ${TwoP} (` + ` ▲ ${cprice2})`
-} else { cprice2 = `0 회사1 : ${TwoP} ( - 0 )` }
+} else { cprice2 = `0 회사2 : ${TwoP} ( - 0 )` }
                 
 if (ThrP > ThrPs) {
           cprice3 = `${cprice3}`
