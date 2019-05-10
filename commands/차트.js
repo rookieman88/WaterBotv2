@@ -36,10 +36,10 @@ var cprice8 = EigPs - EigP
 if (OneP > OnePs) {
           cprice1 = `${cprice1}`
 	     cprice1 = cprice1.replace("-", "");
-     cprice1 = `- 팀멜론 주식회사 : ${OneP} (` + ` ▼ ${cprice1})`
+     cprice1 = `- 멜론주식회사 : ${OneP} (` + ` ▼ ${cprice1})`
 } else if (OneP < OnePs) {
-     cprice1 = `+ 팀멜론 주식회사 : ${OneP} (` + ` ▲ ${cprice1})`
-} else { cprice1 = `0 팀멜론 주식회사 : ${OneP} ( - 0 )` }
+     cprice1 = `+ 멜론주식회사 : ${OneP} (` + ` ▲ ${cprice1})`
+} else { cprice1 = `0 멜론주식회사 : ${OneP} ( - 0 )` }
                 
 if (TwoP > TwoPs) {
           cprice2 = `${cprice2}`
@@ -68,18 +68,18 @@ if (ForP > ForPs) {
 if (FivP > FivPs) {
           cprice5 = `${cprice5}`
 	     cprice5 = cprice5.replace("-", "");
-     cprice5 = `- 회사5 : ${FivP} (` + ` ▼ ${cprice5})`
+     cprice5 = `- 요세미티전자 : ${FivP} (` + ` ▼ ${cprice5})`
 } else if (FivP < FivPs) {
-     cprice5 = `+ 회사5 : ${FivP} (` + ` ▲ ${cprice5})`
-} else { cprice5 = `0 회사5 : ${FivP} ( - 0 )` }
+     cprice5 = `+ 요세미티전자 : ${FivP} (` + ` ▲ ${cprice5})`
+} else { cprice5 = `0 요세미티전자 : ${FivP} ( - 0 )` }
 		 
 if (SixP > SixPs) {
           cprice6 = `${cprice6}`
 	     cprice6 = cprice6.replace("-", "");
-     cprice6 = `- 회사6 : ${SixP} (` + ` ▼ ${cprice6})`
+     cprice6 = `- 멜론농장 : ${SixP} (` + ` ▼ ${cprice6})`
 } else if (SixP < SixPs) {
-     cprice6 = `+ 회사6 : ${SixP} (` + ` ▲ ${cprice6})`
-} else { cprice6 = `0 회사6 : ${SixP} ( - 0 )` }
+     cprice6 = `+ 멜론농장 : ${SixP} (` + ` ▲ ${cprice6})`
+} else { cprice6 = `0 멜론농장 : ${SixP} ( - 0 )` }
 		 
 if (SevP > SevPs) {
           cprice7 = `${cprice7}`
