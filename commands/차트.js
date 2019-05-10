@@ -36,18 +36,18 @@ var cprice8 = EigPs - EigP
 if (OneP > OnePs) {
           cprice1 = `${cprice1}`
 	     cprice1 = cprice1.replace("-", "");
-     cprice1 = `- 회사1 : ${OneP} (` + ` ▼ ${cprice1})`
+     cprice1 = `- 팀멜론 주식회사 : ${OneP} (` + ` ▼ ${cprice1})`
 } else if (OneP < OnePs) {
-     cprice1 = `+ 회사1 : ${OneP} (` + ` ▲ ${cprice1})`
-} else { cprice1 = `0 회사1 : ${OneP} ( - 0 )` }
+     cprice1 = `+ 팀멜론 주식회사 : ${OneP} (` + ` ▲ ${cprice1})`
+} else { cprice1 = `0 팀멜론 주식회사 : ${OneP} ( - 0 )` }
                 
 if (TwoP > TwoPs) {
           cprice2 = `${cprice2}`
 	     cprice2 = cprice2.replace("-", "");
-     cprice2 = `- 회사2 : ${TwoP} (` + ` ▼ ${cprice2})`
+     cprice2 = `- 키위전자 : ${TwoP} (` + ` ▼ ${cprice2})`
 } else if (TwoP < TwoPs) {
-     cprice2 = `+ 회사2 : ${TwoP} (` + ` ▲ ${cprice2})`
-} else { cprice2 = `0 회사2 : ${TwoP} ( - 0 )` }
+     cprice2 = `+ 키위전자 : ${TwoP} (` + ` ▲ ${cprice2})`
+} else { cprice2 = `0 키위전자 : ${TwoP} ( - 0 )` }
                 
 if (ThrP > ThrPs) {
           cprice3 = `${cprice3}`
