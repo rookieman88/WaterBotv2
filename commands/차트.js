@@ -84,10 +84,10 @@ if (SixP > SixPs) {
 if (SevP > SevPs) {
           cprice7 = `${cprice7}`
 	     cprice7 = cprice7.replace("-", "");
-     cprice7 = `- 회사7 : ${SevP} (` + ` ▼ ${cprice7})`
+     cprice7 = `- 연어해산물 : ${SevP} (` + ` ▼ ${cprice7})`
 } else if (SevP < SevPs) {
-     cprice7 = `+ 회사7 : ${SevP} (` + ` ▲ ${cprice7})`
-} else { cprice7 = `0 회사7 : ${SevP} ( - 0 )` }
+     cprice7 = `+ 연어해산물 : ${SevP} (` + ` ▲ ${cprice7})`
+} else { cprice7 = `0 연어해산물 : ${SevP} ( - 0 )` }
 		 
 if (EigP > EigPs) {
           cprice8 = `${cprice8}`
