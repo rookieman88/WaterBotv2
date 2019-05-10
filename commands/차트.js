@@ -52,18 +52,18 @@ if (TwoP > TwoPs) {
 if (ThrP > ThrPs) {
           cprice3 = `${cprice3}`
 	     cprice3 = cprice3.replace("-", "");
-     cprice3 = `- 회사3 : ${ThrP} (` + ` ▼ ${cprice3})`
+     cprice3 = `- 도리치킨 : ${ThrP} (` + ` ▼ ${cprice3})`
 } else if (ThrP < ThrPs) {
-     cprice3 = `+ 회사3 : ${ThrP} (` + ` ▲ ${cprice3})`
-} else { cprice3 = `0 회사3 : ${ThrP} ( - 0 )` }
+     cprice3 = `+ 도리치킨 : ${ThrP} (` + ` ▲ ${cprice3})`
+} else { cprice3 = `0 도리치킨 : ${ThrP} ( - 0 )` }
                 
 if (ForP > ForPs) {
           cprice4 = `${cprice4}`
 	     cprice4 = cprice4.replace("-", "");
-     cprice4 = `- 회사4 : ${ForP} (` + ` ▼ ${cprice4})`
+     cprice4 = `- 오아시수 : ${ForP} (` + ` ▼ ${cprice4})`
 } else if (ForP < ForPs) {
-     cprice4 = `+ 회사4 : ${ForP} (` + ` ▲ ${cprice4})`
-} else { cprice4 = `0 회사4 : ${ForP} ( - 0 )` }
+     cprice4 = `+ 오아시수 : ${ForP} (` + ` ▲ ${cprice4})`
+} else { cprice4 = `0 오아시수 : ${ForP} ( - 0 )` }
                 
 if (FivP > FivPs) {
           cprice5 = `${cprice5}`
