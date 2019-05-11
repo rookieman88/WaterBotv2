@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
 
-
+/*
 message.channel.send('끝말잇기를 시작합니다. 1분안에 2명이 모이지 않으면 종료됩니다.').then((msg) => {
  msg.react('🎉')
 const filter = (reaction, user) => reaction.emoji.name === '🎉' && user.id !== bot.user.id
@@ -49,7 +49,7 @@ thip = 1
 message.channel.send(`끝말잇기가 끝났습니다. ${win}님이 우승하셨습니다.`)
 
 });
-
+*/
 };
 
 module.exports.help = {
