@@ -62,7 +62,7 @@ let Ch = bot.channels.get(cha)
 	 });
  });
 	 } else {
-		  let reason1 = message.content.replace(`워터야 공지 에브리원 `, "")
+		  let reason1 = message.content.replace(`워터야 공지 `, "")
  message.channel.send(`${bot.guilds.size}개의 서버에 공지가 발신됩니다. 공지 내용은 다음과 같습니다\n${reason1}`).then((th) => {
       th.react('❌')
       th.react('⭕')
