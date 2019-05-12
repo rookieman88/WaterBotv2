@@ -103,6 +103,7 @@ let Ch = bot.channels.get(cha)
 	 });
  } else { message.channel.send('공지 발신이 취소되었습니다.') }
  });
+ });
 		 
 	 }
  } else {
