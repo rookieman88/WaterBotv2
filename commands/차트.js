@@ -3,7 +3,7 @@ const superagent = require('superagent');
 
 module.exports.run = async (bot, message, args) => {
 
-     	 superagent.get("https://api.myjson.com/bins/j4s9w").then((res) => {
+     	 superagent.get("http://api.myjson.com/bins/j4s9w").then((res) => {
 let StocksPrice = res.body;
 
 let OneP = StocksPrice["Stocks"].OneStock
