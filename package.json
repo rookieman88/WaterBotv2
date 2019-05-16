@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "eslint": "^5.16.0",
-    "eslint-config-aqua": "^1.0.0"
+    "eslint-config-aqua": "^5.0.0"
   },
   "eslintConfig": {
     "extends": "aqua",
