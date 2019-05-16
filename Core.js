@@ -53,18 +53,18 @@ bot.on("ready", async() => {
 
 	console.log("started")
 	
-	superagent.get("https://api.myjson.com/bins/j4s9w").then((res) => {
+	superagent.get("http://api.myjson.com/bins/j4s9w").then((res) => {
         let StocksPrice = res.body;
                 StocksPrice["Timer"] = {
                    left: 60
                 };
-		superagent.put("https://api.myjson.com/bins/j4s9w").send(StocksPrice).catch((err) => console.log(err));
+		superagent.put("http://api.myjson.com/bins/j4s9w").send(StocksPrice).catch((err) => console.log(err));
 });	
 
 setInterval(() => {
 	
 	
-		 superagent.get("https://api.myjson.com/bins/j4s9w").then((res) => {
+		 superagent.get("http://api.myjson.com/bins/j4s9w").then((res) => {
 let StocksPrice = res.body;
 	        let timeleft = StocksPrice["Timer"].left
 		StocksPrice["Timer"] = {
@@ -258,7 +258,7 @@ StocksPrice["Timer"] = {
 	
 console.log("re")
 		 }
-		superagent.put("https://api.myjson.com/bins/j4s9w").send(StocksPrice).catch((err) => console.log(err));
+		superagent.put("http://api.myjson.com/bins/j4s9w").send(StocksPrice).catch((err) => console.log(err));
 
  });
 
@@ -272,7 +272,7 @@ console.log("re")
 });
 
 bot.on('guildMemberAdd', member => {
-superagent.get("https://api.myjson.com/bins/z6qiw").then((res) => {
+superagent.get("http://api.myjson.com/bins/z6qiw").then((res) => {
 let welcomechannel = res.body;
 if(!welcomechannel[member.guild.id]){
 	return
@@ -295,7 +295,7 @@ if(!welcomechannel[member.guild.id]){
 
 
 bot.on('guildMemberRemove', member => {
-superagent.get("https://api.myjson.com/bins/z6qiw").then((res) => {
+superagent.get("http://api.myjson.com/bins/z6qiw").then((res) => {
 let welcomechannel = res.body;
 if(!welcomechannel[member.guild.id]){
 	return
