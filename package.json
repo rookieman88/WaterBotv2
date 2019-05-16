@@ -11,8 +11,8 @@
   "author": "Oasics",
   "license": "MIT",
   "dependencies": {
-    "dialogflow": "^0.8.2",
-    "discord.js": "^11.4.2",
+    "dialogflow": "^0.9.0",
+    "discord.js": "^11.5.0",
     "opusscript": "0.0.6",
     "random-hex-color": "^1.0.1",
     "request": "^2.88.0",
