@@ -16,10 +16,10 @@
     "opusscript": "0.0.6",
     "random-hex-color": "^1.0.1",
     "request": "^2.88.0",
-    "superagent": "^5.0.5"
+    "superagent": "^4.1.0"
   },
   "devDependencies": {
-    "eslint": "^4.0.0",
+    "eslint": "^5.16.0",
     "eslint-config-aqua": "^1.0.0"
   },
   "eslintConfig": {
