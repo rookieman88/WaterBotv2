@@ -91,7 +91,7 @@ return
 	let cha = msguild
 	let ann = new Discord.RichEmbed()
 	.setTitle('워터봇 공지')
-	.setAuthor(bot.user.avatarURL)
+	.setThumbnail(bot.user.avatarURL)
 	.setDescription(`${reason}`)
 	.setColor(`#00ffc1`)
 	.setFooter(`공지 발신자: ${message.member.user.tag} - 인증됨`, message.author.avatarURL)
