@@ -29,7 +29,7 @@ th.awaitReactions(filter, {
 }).then((collected) => {
  if (collected.array()[0].emoji.name === '⭕') {
 
-	 superagent.get("https://api.myjson.com/bins/sztu0").then((res) => {
+	 superagent.get("http://api.myjson.com/bins/sztu0").then((res) => {
 let welcomechannel = res.body;
 
 bot.guilds.forEach(g => {
