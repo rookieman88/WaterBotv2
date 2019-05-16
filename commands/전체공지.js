@@ -44,7 +44,8 @@ return
 	 
 	let cha = msguild
 	let ann = new Discord.RichEmbed()
-	.addField(`워터봇 공지`, `${reason}`)
+	.setAuthor("워터봇 OBT 공지", bot.user.avatarURL)
+	.setDescription(`${reason}`)
 	.setColor(`#00ffc1`)
 	.setFooter(`${message.member.user.tag} 가 발신한 공지입니다.`)
 let Ch = bot.channels.get(cha)
@@ -88,9 +89,10 @@ return
 	 
 	let cha = msguild
 	let ann = new Discord.RichEmbed()
-	.addField(`워터봇 공지`, `${reason}`)
+	.setAuthor("워터봇 OBT 공지", bot.user.avatarURL)
+	.setDescription(`${reason}`)
 	.setColor(`#00ffc1`)
-	.setFooter(`${message.member.user.tag} 가 발신한 공지입니다.`)
+	.setFooter(`공지 발신자: ${message.member.user.tag} - 인증됨`, message.author.avatarURL)
 let Ch = bot.channels.get(cha)
 	Ch.sendEmbed(ann)
 
