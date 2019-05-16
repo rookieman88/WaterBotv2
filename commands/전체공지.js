@@ -48,6 +48,7 @@ return
 	.setDescription(`${reason}`)
 	.setColor(`#00ffc1`)
 	.setFooter(`${message.member.user.tag} 가 발신한 공지입니다.`)
+	.setTimestamp()
 let Ch = bot.channels.get(cha)
 	Ch.sendEmbed(ann)
 	Ch.send("[ @everyone ]")
@@ -93,6 +94,7 @@ return
 	.setDescription(`${reason}`)
 	.setColor(`#00ffc1`)
 	.setFooter(`공지 발신자: ${message.member.user.tag} - 인증됨`, message.author.avatarURL)
+	.setTimestamp()
 let Ch = bot.channels.get(cha)
 	Ch.sendEmbed(ann)
 
