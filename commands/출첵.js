@@ -47,7 +47,7 @@ let RanMoney = Math.floor(Math.random() * (150)) + 150;
     };   
    let ct = new Date()
     message.channel.send(`${ct.getFullYear()}년 ${ct.getMonth() + 1}월 ${ct.getDate()}일
-${ct.getHours()}시 ${ct.getMinutes()}분 에 출첵하셨습니다.
+${ct.getHours()}시 ${ct.getMinutes()}분 출첵!
 보상: ${RanMoney}원`)
 } 
 		superagent.put("https://api.myjson.com/bins/c19z0").send(UserStocks).catch((err) => console.log(err));
