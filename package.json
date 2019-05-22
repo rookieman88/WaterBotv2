@@ -16,7 +16,8 @@
     "opusscript": "0.0.6",
     "random-hex-color": "^1.0.1",
     "request": "^2.88.0",
-    "superagent": "^4.1.0"
+    "superagent": "^4.1.0",
+    "parse-ms": "2.1.0"
   },
   "devDependencies": {
     "eslint": "^5.16.0",
