@@ -25,16 +25,16 @@ let UserStocks = res.body;
     };
 }
 let UserCoolDown = UserStocks[message.author.id].CoolDown
-let UserCoins = UserStocks[message.author.id].Coins
-let RanMoney = Math.floor(Math.random() * (150)) + 150;
 
 if (day - (Date.now() - UserCoolDown) > 0) {
 let TimeLeft = ms(86400000 - (Date.now() - UserCoolDown))
 message.channel.send(`ㅇㅇㄴㅇ, ${TimeLeft.hours}시간 ${TimeLeft.minutes}분 뒤에 와~`)
 } else {
+let UserCoins = UserStocks[message.author.id].Coins
+let RanMoney = Math.floor(Math.random() * (150)) + 150;
 
         UserStocks[message.author.id] = {
-          WatCoin: UserCoins + RanMoney,
+          WatCoin: parseInt(UserCoins) + parseInt(RanMoney),
           UserOneStock: UserStocks[message.author.id].UserOneStock,
           UserTwoStock: UserStocks[message.author.id].UserTwoStock,
           UserThrStock: UserStocks[message.author.id].UserThrStock,
