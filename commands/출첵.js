@@ -12,7 +12,7 @@ let UserStocks = res.body;
 
 	if(!UserStocks[message.author.id]) {
      UserStocks[message.author.id] = {
-          WatCoin: 0,
+          WatCoin: 3000,
           UserOneStock: 0,
           UserTwoStock: 0,
           UserThrStock: 0,
