@@ -45,7 +45,10 @@ let RanMoney = Math.floor(Math.random() * (150)) + 150;
           UserEigStock: UserStocks[message.author.id].UserEigStock,
           CoolDown: Date.now()
     };   
-    message.channel.send(`착해서 ${RanMoney}원 주는거임 (아 이거 정식출시되면 이멘트 안씀)`)
+   let ct = new Date()
+    message.channel.send(`${ct.getFullYear()}년 ${ct.getMonth() + 1}월 ${ct.getDate()}일
+${ct.getHours()}시 ${ct.getMinutes()}분 에 출첵하셨습니다.
+보상: ${RanMoney}원`)
 } 
 		superagent.put("https://api.myjson.com/bins/c19z0").send(UserStocks).catch((err) => console.log(err));
 
