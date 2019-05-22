@@ -30,7 +30,7 @@ if (day - (Date.now() - UserCoolDown) > 0) {
 let TimeLeft = ms(86400000 - (Date.now() - UserCoolDown))
 message.channel.send(`ㅇㅇㄴㅇ, ${TimeLeft.hours}시간 ${TimeLeft.minutes}분 뒤에 와~`)
 } else {
-let UserCoins = UserStocks[message.author.id].Coins
+let UserCoins = UserStocks[message.author.id].WatCoin
 let RanMoney = Math.floor(Math.random() * (150)) + 150;
 
         UserStocks[message.author.id] = {
