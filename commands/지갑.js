@@ -29,7 +29,7 @@ let UserStocks = res.body;
          let UserSev = UserStocks[message.author.id].UserSevStock
          let UserEig = UserStocks[message.author.id].UserEigStock
          
-         let StockWallet = ` `
+         let StockWallet = ``
          if(UserOne) {
          StockWallet += `회사1: ${UserOne}개\n`
          }
