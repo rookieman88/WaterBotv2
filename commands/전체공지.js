@@ -8,8 +8,6 @@ const superagent = require('superagent');
 
 let filter = (reaction, user) => (reaction.emoji.name === '❌' || reaction.emoji.name === '⭕') && user.id === message.author.id
 
-		
- let owner = "417571990820618250"
  let owners = process.env.owners
  
 
@@ -29,29 +27,27 @@ th.awaitReactions(filter, {
 }).then((collected) => {
  if (collected.array()[0].emoji.name === '⭕') {
 
-	 superagent.get("http://api.myjson.com/bins/sztu0").then((res) => {
-let welcomechannel = res.body;
-
 bot.guilds.forEach(g => {
 	 let reason = message.content.replace(`워터야 공지 에브리원 `, "")
 	 
-	   if(!welcomechannel[g.id]){
-return
-}
-	let msguild = welcomechannel[g.id].welcomechannel	
-	if (msguild === 0) { return }
-
-	 
-	let cha = msguild
+         let gc;
+	       g.channels.forEach(c => {
+               let cname = `${c.name}`
+                if (cname.includes('공지')) {
+                  gc = `${c.id}`
+                }
+       });
+        if (!gc) { return }
+	
 	let ann = new Discord.RichEmbed()
-	.setAuthor("워터봇 OBT 공지", bot.user.avatarURL)
+	.setTitle('워터봇 공지')
+	.setThumbnail(bot.user.avatarURL)
 	.setDescription(`${reason}`)
 	.setColor(`#00ffc1`)
-	.setFooter(`${message.member.user.tag} 가 발신한 공지입니다.`)
+	.setFooter(`공지 발신자: ${message.member.user.tag} - 인증됨`, message.author.avatarURL)
 	.setTimestamp()
-let Ch = bot.channels.get(cha)
-	Ch.sendEmbed(ann)
-	Ch.send("[ @everyone ]")
+let Ch = bot.channels.get(gc)
+	Ch.send(ann)
 
 })
 	 	 let reason = message.content.replace(`워터야 공지 에브리원 `, "")
@@ -59,7 +55,6 @@ let Ch = bot.channels.get(cha)
 발신이 완료되었습니다!
 공지 내용은 [ ${reason} + everyone ] 입니다.
 `)
-	 });
 	  } else { message.channel.send('공지 발신이 취소되었습니다.') }
 	 });
  });
@@ -74,21 +69,19 @@ th.awaitReactions(filter, {
         max: 1
 }).then((collected) => {
  if (collected.array()[0].emoji.name === '⭕') {
-	
-	 superagent.get("http://api.myjson.com/bins/sztu0").then((res) => {
-let welcomechannel = res.body;
 
 bot.guilds.forEach(g => {
 	 let reason = message.content.replace(`워터야 공지 `, "")
 	 
-	   if(!welcomechannel[g.id]){
-return
-}
-	let msguild = welcomechannel[g.id].welcomechannel	
-	if (msguild === 0) { return }
-
-	 
-	let cha = msguild
+         let gc;
+	       g.channels.forEach(c => {
+               let cname = `${c.name}`
+                if (cname.includes('공지')) {
+                  gc = `${c.id}`
+                }
+       });
+        if (!gc) { return }
+	
 	let ann = new Discord.RichEmbed()
 	.setTitle('워터봇 공지')
 	.setThumbnail(bot.user.avatarURL)
@@ -96,7 +89,7 @@ return
 	.setColor(`#00ffc1`)
 	.setFooter(`공지 발신자: ${message.member.user.tag} - 인증됨`, message.author.avatarURL)
 	.setTimestamp()
-let Ch = bot.channels.get(cha)
+let Ch = bot.channels.get(gc)
 	Ch.sendEmbed(ann)
 
 })
@@ -105,7 +98,6 @@ let Ch = bot.channels.get(cha)
 발신이 완료되었습니다!
 공지 내용은 [ ${reason} ] 입니다.
 `)
-	 });
  } else { message.channel.send('공지 발신이 취소되었습니다.') }
  });
  });
