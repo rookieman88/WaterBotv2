@@ -60,7 +60,7 @@ module.exports.run = async (bot, message, args) => {
                                         this.wordList.push(word);
                                         this.user2(word);
                         } else { 
-                                return this.user1(word); }
+                                return this.user1(); }
                         });
                 }
                 user2(word){
