@@ -49,7 +49,7 @@ bot.guilds.forEach(g => {
    let ment;
    try {
    ment = `${g.name}: 발신 성공\n`
-   if(!Ch.permissionsFor(g.me).has(`SEND_MESSAGES`)) { ment = `${g.name}: 발신 실패 (메시지 발신 권한 없음)` }
+   if(!Ch.permissionsFor(g.me).has(`SEND_MESSAGES`)) { ment = `${g.name}: 발신 실패 (메시지 발신 권한 없음)\n` }
    Ch.send(ann)
    }
    catch(e) {
