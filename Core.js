@@ -50,6 +50,15 @@ let BStock8;
 
 
 bot.on("ready", async() => {
+	
+    let totalSeconds = (bot.uptime / 1000)
+    let days = Math.floor(totalSeconds / 86400)
+    let hours = Math.floor(totalSeconds / 3600)
+    totalSeconds %= 3600;
+    let minutes = Math.floor(totalSeconds / 60)
+    let seconds = Math.floor(totalSeconds % 60)
+    bot.setActivity(`업타임: ${days}:${hours}:${minutes}:${seconds} | 워터야 도움` { 'type': 'PLAYING' })
+    
 
 	console.log("started")
 	
