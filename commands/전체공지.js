@@ -29,7 +29,7 @@ const superagent = require('superagent');
 	       g.channels.forEach(c => {
                 let cname = `${c.name}`
                 if (cname.includes('공지') || cname.includes('notice') || cname.includes('알림') || cname.includes('announce')) {
-                  if (!cname.includes('길드') && !cname.includes('벤') && !cname.includes('경고') && !cname.includes('guild') && !cname.includes('ban') && !cname.includes('warn')) {
+                  if (!cname.includes('업로드') && !cname.includes('길드') && !cname.includes('벤') && !cname.includes('경고') && !cname.includes('guild') && !cname.includes('ban') && !cname.includes('warn') && !cname.includes('영상')) {
                     gc = `${c.id}`
                   }
                 }
