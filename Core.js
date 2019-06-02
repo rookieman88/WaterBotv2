@@ -50,14 +50,6 @@ let BStock8;
 
 
 bot.on("ready", async() => {
-	
-    let totalSeconds = (bot.uptime / 1000)
-    let days = Math.floor(totalSeconds / 86400)
-    let hours = Math.floor(totalSeconds / 3600)
-    totalSeconds %= 3600;
-    let minutes = Math.floor(totalSeconds / 60)
-    let seconds = Math.floor(totalSeconds % 60)
-    bot.user.setActivity(`업타임\: ${days}\:${hours}\:${minutes}\:${seconds} | 도움`, {type: "PLAYING"});
     
 
 	console.log("started")
@@ -71,6 +63,14 @@ bot.on("ready", async() => {
 });	
 
 setInterval(() => {
+	
+    let totalSeconds = (bot.uptime / 1000)
+    let days = Math.floor(totalSeconds / 86400)
+    let hours = Math.floor(totalSeconds / 3600)
+    totalSeconds %= 3600;
+    let minutes = Math.floor(totalSeconds / 60)
+    let seconds = Math.floor(totalSeconds % 60)
+    bot.user.setActivity(`업타임\: ${days}\:${hours}\:${minutes}\:${seconds} | 도움`, {type: "PLAYING"});
 	
 	
 		 superagent.get("http://api.myjson.com/bins/j4s9w").then((res) => {
