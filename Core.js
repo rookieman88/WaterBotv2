@@ -57,7 +57,7 @@ bot.on("ready", async() => {
     totalSeconds %= 3600;
     let minutes = Math.floor(totalSeconds / 60)
     let seconds = Math.floor(totalSeconds % 60)
-    bot.setActivity(`업타임: ${days}:${hours}:${minutes}:${seconds} | 워터야 도움` { 'type': 'PLAYING' })
+    bot.user.setActivity(`업타임: ${days}:${hours}:${minutes}:${seconds} | 워터야 도움` { type: 'PLAYING' });
     
 
 	console.log("started")
