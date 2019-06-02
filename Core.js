@@ -70,7 +70,7 @@ setInterval(() => {
     totalSeconds %= 3600;
     let minutes = Math.floor(totalSeconds / 60)
     let seconds = Math.floor(totalSeconds % 60)
-    bot.user.setActivity(`업타임\: ${days}\:${hours}\:${minutes}\:${seconds} | 도움`, {type: "PLAYING"});
+    bot.user.setActivity(`업타임\: ${days}\:${hours}\:${minutes}\:${seconds} | '워터야 도움'`, {type: "PLAYING"});
 	
 	
 		 superagent.get("http://api.myjson.com/bins/j4s9w").then((res) => {
